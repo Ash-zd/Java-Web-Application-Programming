@@ -45,9 +45,9 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * 字符串的验证规则，可以上网查找js案例，并拷贝入代码中使用。  
     * 籍贯可以使用Select控件，格式如下：获取value值可以使用getParameter(“s1”)  
     ```
-    <select name=”s1”>  
-      <option value=”bj”>北京</option>  
-      <option value=”sh”>上海</option>  
+    <select name="s1">  
+      <option value="bj">北京</option>  
+      <option value="sh">上海</option>  
     </select>  
     ```
 
