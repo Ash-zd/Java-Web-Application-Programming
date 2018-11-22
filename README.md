@@ -91,3 +91,31 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * 代码编写主要包括`JDBC`数据库表的`增加（executeUpdate）`与`查询(executeQuery)`  
     * `MySQL`数据库的安装可以上外网下载5.0以上的版本  
 
+## 0x07 `Servlet`  
+* 实验目的：了解`Servlet`代码的基本编写方法，掌握Web开发项目中`Servlet`的实际应用。
+* 作业要求：
+  * 最终内容打包成学号+姓名.rar格式
+  * 可以通过www.w3school.com.cn或者baidu，google等网站寻求帮助来完成作业。
+* 在Web中通过Servlet(JDBC)操作数据库中的表格数据。
+  * 在mysql数据库软件中创建一个数据库mydatebase
+  * 在数据库中创建一个表students（可以通过create命令，或者图形界面创建）
+	```sql
+	CREATE TABLE IF NOT EXISTS `students` (
+	  `id` int(11) NOT NULL auto_increment,
+	  `link` varchar(255) default NULL,
+	  `pwd` varchar(255) default NULL,
+	  `roles` varchar(255) default NULL,
+	  `uid` varchar(255) default NULL,
+	  `username` varchar(255) default NULL,
+	  PRIMARY KEY  (`id`)
+	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+	```
+  * 创建`servlet`代码`List` ,功能:从数据库中读取`students表`的内容；在页面的最下面，创建一个链接（链接到`new.jsp`），链接文字是“增加学生”。
+  * 创建jsp页面`new.jsp`，内容是一个表单，表单项是`students`的字段的内容,以及`submit`和`reset`按钮。当点击`submit`按钮以后，请用js做简单的表单验证（包括字段非空验证），然后提交到`Servlet`代码`confirm`处理。
+  * 创建代码`confirm`，将表单的内容存储到数据库的表`students`中（不能违反数据库表的主键约束），然后显示提示信息`“新建学生成功”`，并且5秒以后跳转返回到`List`
+  * 注意：
+    * 使用到的jsp对象主要包括`out`、`request`、`response`
+    * Servlet代码需要注意的是`Web.xml`的配置
+    * 代码编写主要包括`JDBC`数据库表的增加（`executeUpdate`）与查询(`executeQuery`)。
+    * `MySQL`数据库的安装可以上外网下载5.0以上的版本。
+
