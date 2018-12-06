@@ -91,7 +91,7 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * 代码编写主要包括`JDBC`数据库表的`增加（executeUpdate）`与`查询(executeQuery)`  
     * `MySQL`数据库的安装可以上外网下载5.0以上的版本  
 
-## 0x07 `Servlet`  
+## 0x07 实训7 `Servlet`  
 * 实验目的：了解`Servlet`代码的基本编写方法，掌握Web开发项目中`Servlet`的实际应用。
 * 作业要求：
   * 最终内容打包成学号+姓名.rar格式
@@ -118,4 +118,54 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * `Servlet`代码需要注意的是`Web.xml`的配置
     * 代码编写主要包括`JDBC`数据库表的增加（`executeUpdate`）与查询(`executeQuery`)。
     * `MySQL`数据库的安装可以上外网下载5.0以上的版本。
+
+# 0x08 实训8 过滤器的用法
+* 实验目的：掌握`Filter`代码的基本编写方法，并且在`web.xml`中设置。了解java代码模板的设置方法。
+* 作业要求：
+  * 最终内容打包成学号+姓名.rar格式
+  * 可以通过www.w3school.com.cn或者baidu，google等网站寻求帮助来完成作业。
+	* 设置`filter`代码的模板，代码结构如下。（设置代码的菜单是`windows-preferences-java-templates`，其中带“$ ”的是参数，根据实际情况会自行调整，使用模板的快捷方式是`alt`+`/`，当在空白处输入模板名，然后按快捷方式即产生代码）。
+	```java
+	package ${enclosing_package}
+	import java.io.IOException;
+	import javax.servlet.FilterChain;
+	import javax.servlet.FilterConfig;
+	import javax.servlet.ServletException;
+	import javax.servlet.ServletRequest;
+	import javax.servlet.ServletResponse;
+	import javax.servlet.Filter;
+	import javax.servlet.http.HttpServletRequest;
+	import javax.servlet.http.HttpServletResponse;
+	import javax.servlet.http.HttpSession;
+	public class ${primary_type_name} implements Filter{
+	  public ${primary_type_name}(){
+		super();
+	  }
+	  private FilterConfig filterConfig;
+	  public void init(FilterConfig filterConfig)throws ServletException{
+		this.filterConfig=filterConfig;
+	  }
+	  public void doFilter(ServletRequest req,ServletResponse res,FilterChain filterChain){
+		try{
+			HttpServletRequest request=(HttpServletRequest)req;
+			HttpServletResponse response=(HttpServletResponse)res;
+			HttpSession session=request.getSession();
+			//code when login
+			filterChain.doFilter(req,res);
+			//code when logout
+		}catch(IOException e){
+			e.printStackTrace();
+		}catch(ServletException e){
+			e.printStackTrace();
+		}
+	  }
+	  public void destroy(){
+		  //put destroy string in log
+		  //put your code
+	  }
+	}
+	```
+* 设置`web.xml`代码的模板（菜单式`windows–perference-myeclipse –files and editors–xml–xml templates`，使用的方法如1）
+* 编写`filter`过滤器，功能是实现代码的转换，把客户端页面显示的编码转化为`gbk`，并且调试成功。（思考：`request`跟`response`执行`setCharacterEncoding`方法的区别）
+* 研究大作业的题目，编写数据库文档、代码文件的目录，以及页面结构。
 
