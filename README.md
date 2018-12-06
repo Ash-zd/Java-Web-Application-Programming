@@ -198,7 +198,7 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * 点击用户管理的时候，中间的表格从数据库中读取信息，显示用户记录，然后完成`编辑`跟`删除`功能。
 * 注意：也可以采用`admin1`文件夹的静态页面模板，功能如上，此模板中登录界面是`index.html`，主功能界面是`main.html`。
 
-* 附录：使用到的数据库表如下：
+## 附录：使用到的数据库表如下：
 
 ①Lmenu（栏目表）
 
