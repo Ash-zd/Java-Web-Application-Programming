@@ -228,13 +228,12 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
 |Id|Int|<br>|编号|
 |ntitle|String|50|标题|
 |ncontent|String|1000|内容|
-|father|Int|<br>|所属栏目|
 |nurl|String|200|图片路径|
-
+|father|Int|<br>|所属栏目|
 
 数据内容
 
-|编号|标题|内容|所属栏目|图片路径|
+|编号|标题|内容|图片路径|所属栏目|
 |:------|:------|:------|:------|:------|
 |1|上海医疗企业改革|上海医疗企业改革内容上海医疗企业改革内容|<br>|2|
 |2|国家出台医疗器械使用规范|国家出台医疗器械使用规范内容国家出台医疗器械使用规范内容|<br>|2|
