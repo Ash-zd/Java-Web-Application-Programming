@@ -119,7 +119,7 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * 代码编写主要包括`JDBC`数据库表的增加（`executeUpdate`）与查询(`executeQuery`)。
     * `MySQL`数据库的安装可以上外网下载5.0以上的版本。
 
-# 0x08 实训8 过滤器的用法
+## 0x08 实训8 过滤器的用法
 * 实验目的：掌握`Filter`代码的基本编写方法，并且在`web.xml`中设置。了解java代码模板的设置方法。
 * 作业要求：
   * 最终内容打包成学号+姓名.rar格式
@@ -169,7 +169,7 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
 * 编写`filter`过滤器，功能是实现代码的转换，把客户端页面显示的编码转化为`gbk`，并且调试成功。（思考：`request`跟`response`执行`setCharacterEncoding`方法的区别）
 * 研究大作业的题目，编写数据库文档、代码文件的目录，以及页面结构。
 
-# 0x09 实训9 MVC和DAO 
+## 0x09 实训9 MVC和DAO 
 * 实验目的：掌握MVC的概念和DAO架构代码的基本编写方法。
 * 作业要求：
   * 最终内容打包成学号+姓名.rar格式
@@ -177,7 +177,7 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
   * 可以通过www.w3school.com.cn或者baidu，google等网站寻求帮助来完成作业。
 * 编写一个登录界面，输入学号和姓名，在数据库中进行验证，如果验证通过，则在另一个页面中显示顾客的姓名，要求使用`JavaBean`封装顾客信息，使用`DAO`和`VO`完成顾客的模糊查询。
 
-# 0x10 大作业  
+## 0x0A 大作业  
 * 背景：
   * 杭州言汇科技有限公司是一家知名的医疗器械公司，公司业务发展到一定程度以后需要制作一个官方网站。
   * 公司的官方网站需要制作的页面很多，需要巨大的工作量，其中界面设计人员、美工人员制作了一个包含大量静态页面的文件夹。然后需要项目团队的动态界面程序员进一步进行完善的工作。
@@ -198,7 +198,7 @@ Description: Java Web Application Programming, 2018 Autumn, HDU
     * 点击用户管理的时候，中间的表格从数据库中读取信息，显示用户记录，然后完成`编辑`跟`删除`功能。
 * 注意：也可以采用`admin1`文件夹的静态页面模板，功能如上，此模板中登录界面是`index.html`，主功能界面是`main.html`。
 
-## 附录：使用到的数据库表如下：
+### 附录：使用到的数据库表如下：
 
 ①Lmenu（栏目表）
 
