@@ -10,8 +10,8 @@ public class CustomerVO extends Customer {
     private String phone;
     private String idNo;
 
-    public CustomerVO(String name, String phone, String idNo) {
-        super(name);
+    public CustomerVO(String studentNo, String name, String phone, String idNo) {
+        super(studentNo, name);
         this.phone = phone;
         this.idNo = idNo;
     }

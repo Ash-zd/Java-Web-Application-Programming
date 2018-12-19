@@ -1,5 +1,7 @@
 package servlet;
 
+import dao.CustomerDAO;
+import pojo.Customer;
 import util.DBConnect;
 
 import javax.servlet.ServletException;
@@ -30,9 +32,6 @@ public class Servlet extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-
     }
 
     @Override
@@ -43,28 +42,22 @@ public class Servlet extends HttpServlet {
     private void process(HttpServletRequest request, HttpServletResponse response) throws IOException, SQLException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+        CustomerDAO customerDAO = new CustomerDAO();
+        Customer customer = new Customer();
+        String studentNo = request.getParameter("studentNo");
+        String name = request.getParameter("name");
+        customer.setName(name);
+        customer.setStudentNo(studentNo);
         try {
-            String studentNo = request.getParameter("studentNo");
-            String name = request.getParameter("name");
-
-            Connection connection = DBConnect.getConnection();
-            String sql = "SELECT name FROM student WHERE studentNo = " + studentNo;
-            Statement stmt = connection.createStatement();
-            ResultSet resultSet = stmt.executeQuery(sql);
-            String resultName = null;
-            while (resultSet.next()) {
-                resultName = resultSet.getString("name");
+            if (customerDAO.query(customer)) {
+                request.setAttribute("customer_no", customer.getStudentNo());
+                request.setAttribute("customer_name", customer.getName());
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
-            if (resultName.equals(name)) {
-                out.println("<h1>check successful.</h1>");
-            } else {
-                out.println("<h1>check unsuccessful.</h1>");
-            }
-
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
+
 
     }
 }
