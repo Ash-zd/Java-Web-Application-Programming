@@ -68,7 +68,12 @@
     <div class="main_left">
       <div class="about_us m-b-10">
         <h2>公司简介<a href="#" class="more">MORE</a></h2>
-        <div class="about_us_contain"> <img src="images/about_img.png" width="113" height="101" /><span class="blod">杭州言汇科技有限公司</span>乘坐校车存在安全风险并且  这种交通风险过于集中，一旦发生事年人伤亡，损太  大。据此，《征求意见稿》规定规划，乘坐校车存在安全风险并且  这种交通风险过于集中，》规定规划....</div>
+        <div class="about_us_contain"> <img src="images/about_img.png" width="113" height="101" />
+          <span class="blod">杭州言汇科技有限公司</span>
+          <div id="ajax_company_about_content">
+            公司介绍公司介绍1
+          </div>
+          </div>
       </div>
       <div class="lay_div">
         <h2>联系我们</h2>
@@ -99,15 +104,16 @@
               <dd>[<a href="#">查看</a>]</dd>
             </dl>
             <ul class="right_ul">
-              <li><a href="#">低碳水化合物饮食可能增加心脑血管疾病的风险</a></li>
-              <li><a href="#">名人代言医疗广告明年起将禁播</a>，</li>
-              <li><a href="#">外贸入侵国内低端医疗器械企业前景堪忧</a></li>
-              <li><a href="#">外贸入侵国内低端医疗器械企业前景堪忧</a></li>
+              <li><a href="#">上海医疗企业改革</a></li>
+              <li><a href="#">国家出台医疗器械使用规范</a>，</li>
+              <li><a href="#">外贸企业越来越多进入国内市场</a></li>
+              <li><a href="#">碳水化合物饮食对身体的危害</a></li>
+              <li><a href="#">世界卫生组织新标准</a></li>
             </ul>
           </div>
         </div>
         <div class="lay_div news">
-          <h2>行业新闻<a href="#" class="more">MORE</a></h2>
+          <h2>技术服务<a href="#" class="more">MORE</a></h2>
           <div class="lay_contain">
             <dl class="right_dl">
               <dt><img src="images/hy_news_img.png" width="113" height="101" /></dt>
@@ -116,36 +122,36 @@
               <dd>[<a href="#">查看</a>]</dd>
             </dl>
             <ul class="right_ul">
-              <li><a href="#">低碳水化合物饮食可能增加心脑血管疾病的风险</a></li>
-              <li><a href="#">名人代言医疗广告明年起将禁播</a>，</li>
-              <li><a href="#">外贸入侵国内低端医疗器械企业前景堪忧</a></li>
-              <li><a href="#">外贸入侵国内低端医疗器械企业前景堪忧</a></li>
+              <li><a href="#">如何科学饮食</a></li>
+              <li><a href="#">学生与医疗体制</a>，</li>
+              <li><a href="#">医疗就业前景分析</a></li>
+              <li><a href="#">注射体液对身体的作用</a></li>
             </ul>
           </div>
         </div>
         <br class="clear"/>
       </div>
       <div class="lay_div">
-        <h2>最新产品<a href="#" class="more">MORE</a></h2>
+        <h2>产品介绍<a href="#" class="more">MORE</a></h2>
         <div class="lay_contain product">
        	  <div class="move_left"><input name="" type="button"  class="move_left_btn" value=""/></div>
             <div class="move_right"><input name="" type="button"  class="move_right_btn" value=""/></div>
             <div class="porduct_list">
        	  <ul class="product_ul">
                 	<li class="poduct_img"><a href="#"><img src="images/product/index_01.png" width="133" height="106" /></a></li>
-                    <li><a href="#">产品名称</a></li>
+                    <li><a href="#">产品1</a></li>
               </ul>
           <ul class="product_ul">
                 	<li class="poduct_img"><a href="#"><img src="images/product/index_01.png" width="133" height="106" /></a></li>
-                    <li><a href="#">产品名称</a></li>
+                    <li><a href="#">产品2</a></li>
               </ul>
           <ul class="product_ul">
                 	<li class="poduct_img"><a href="#"><img src="images/product/index_01.png" width="133" height="106" /></a></li>
-                    <li><a href="#">产品名称</a></li>
+                    <li><a href="#">产品3</a></li>
               </ul>
           <ul class="product_ul">
                 	<li class="poduct_img"><a href="#"><img src="images/product/index_01.png" width="133" height="106" /></a></li>
-                    <li><a href="#">产品名称</a></li>
+                    <li><a href="#">产品4</a></li>
               </ul>
             </div>
         </div>
@@ -158,5 +164,17 @@
     <p>©2011 杭州言汇信息科技有限公司 All rights reserved.</p>
   </div>
 </div>
+<script type="application/javascript">
+  $(document).ready(function () {
+    $.ajax({
+      type: "GET",
+      url: "http://localhost:8080/lmenu/details?name=公司介绍",
+      success: function (data1) {
+        $("#ajax_company_about_content").html(data1);
+      }
+    })
+  })
+
+</script>
 </body>
 </html>

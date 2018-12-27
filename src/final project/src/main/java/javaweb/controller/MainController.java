@@ -1,12 +1,11 @@
 package javaweb.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author Ash
  * @date 2018/12/19 19:15
  */
-@Controller
+@RestController
 public class MainController {
 }
